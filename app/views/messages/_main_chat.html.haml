@@ -2,11 +2,13 @@
   .Chat-main__group-info
     .Chat-main__group-info__left
       .Chat-main__group-info__left__group
-        test
+        = @group.name
       .Chat-main__group-info__left__member
-        Member : masa
+        Member : 
+        - @group.users.each do |user|
+          = user.name
     .Chat-main__group-info__edit-btn
-      = link_to "#", class: "Link-btn" do
+      = link_to edit_group_path(@group), class: "Link-btn" do
         Edit
   .Chat-main__message-list
     -# .Chat-main__message-list__info
@@ -24,6 +26,7 @@
     -# .Chat-main__message-list__text
     -#   今日は朝から雨
     = render @messages
+
 
   -# .Chat-main__message-form
   -#   %form.Chat-main__message-form__form
