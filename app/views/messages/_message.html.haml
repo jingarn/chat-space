@@ -1,14 +1,3 @@
--# .MessageBox
--#   .MessageInfo
--#     .MessageInfo__userName
--#       = message.user.name
--#     .MessageInfo__date
--#       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
--#   .Message
--#     - if message.content.present?
--#       %p.Message__content
--#         = message.content
--#     = image_tag message.image.url, class: 'Message__image' if message.image.present?
 .Chat-main__message-list__info
   .Chat-main__message-list__info__name
     = message.user.name
@@ -16,6 +5,5 @@
     = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
 .Chat-main__message-list__text
   - if message.content.present?
-    -# %p.Message__content
     = message.content
   = image_tag message.image.url, class: 'Message__image' if message.image.present?
