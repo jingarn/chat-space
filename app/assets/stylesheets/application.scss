@@ -12,6 +12,7 @@
 }
 
 .Side-bar {
+  position: fixed;
   width: 300px;
   &__user-name {
     background-color: #253141;
@@ -48,6 +49,7 @@
     flex-direction: column;
     align-items: center;
     color: #ffffff;
+    overflow: scroll;
     &__name {
       font-size: 15px;
       width: 260px;
@@ -62,14 +64,19 @@
 }
 
 .Chat-main {
+  left: 300px;
   width: calc(100vw - 300px);
   background-color: #ffffff;
 
   &__group-info {
+    left: 300px;
+    width: calc(100vw - 300px);
+    top: 0px;
+    position: fixed;
     background-color: #ffffff;
     height: 100px;
     display: flex;
-    margin: 0 40px;
+    padding: 0 40px;
     justify-content: space-between;
     &__left {
       flex-direction: column;
@@ -97,10 +104,14 @@
     }
   }
   &__message-list {
+    margin: 100px 0 90px 300px;
+    width: calc(100vw - 300px);
     background-color: #fafafa;
     height: calc(100vh - 190px);
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    overflow: scroll;
     &__info {
       display: flex;
       margin: 35px 0 0 40px;
@@ -121,6 +132,9 @@
     }
   }
   &__message-form{
+    bottom: 0px;
+    left: 300px;
+    position: fixed;
     background-color: #d2d2d2;
     height: 90px;
     align-items: center;
